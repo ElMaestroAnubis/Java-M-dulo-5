@@ -1,0 +1,9 @@
+{
+    "nombre": "Biblioteca central",
+    "libros": [
+        {"titulo": "Cien años de soledad", "autor": "GGM", "año": 1945},
+        {"titulo": "Mil y una noche", "autor": "desconocido", "año": null},
+        {"titulo": "La culpa es de la vaca", "autor": "Camilo Cruz", "año": 1990}
+    ],
+    "encargado": {"nombre": "Alvaro Mejía", "contacto": "av34@gmail.com"}
+}

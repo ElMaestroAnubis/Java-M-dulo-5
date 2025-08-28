@@ -25,8 +25,8 @@ public class VueloService {
     }
     
 
-    public void crearVuelo(Vuelo vuelo) {
-        vueloRepository.save(vuelo);
+    public Vuelo crearVuelo(Vuelo vuelo) {
+        return vueloRepository.save(vuelo);
     }
 
     public void eliminarVuelo(Long id) {

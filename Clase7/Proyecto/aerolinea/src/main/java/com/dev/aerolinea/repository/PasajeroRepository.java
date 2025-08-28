@@ -5,9 +5,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.springframework.stereotype.Repository;
+
 import com.dev.aerolinea.exception.PasajeroNotFoundException;
 import com.dev.aerolinea.model.Pasajero;
 
+@Repository
 public class PasajeroRepository {
     private final Map<Long, Pasajero> pasajeros = new HashMap<>();
 

@@ -24,8 +24,8 @@ public class VueloRepository {
          return vuelos.get(id);
     }
 
-    public void save(Vuelo vuelo) {
-        vuelos.put(vuelo.getId(), vuelo);
+    public Vuelo save(Vuelo vuelo) {
+        return vuelos.put(vuelo.getId(), vuelo);
     }
 
     public void deleteById(Long id) {

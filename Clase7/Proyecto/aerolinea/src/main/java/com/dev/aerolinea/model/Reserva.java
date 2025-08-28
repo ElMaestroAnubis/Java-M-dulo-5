@@ -13,6 +13,12 @@ public class Reserva {
         this.asiento = asiento;
     }
 
+    public Reserva(Pasajero pasajero, Vuelo vuelo, int asiento) {
+        this.pasajero = pasajero;
+        this.vuelo = vuelo;
+        this.asiento = asiento;
+    }
+
     public Reserva() {
     }
 

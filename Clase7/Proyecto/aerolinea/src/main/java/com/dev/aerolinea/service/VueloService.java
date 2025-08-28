@@ -3,11 +3,14 @@ package com.dev.aerolinea.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.dev.aerolinea.exception.VueloNoDisponibleException;
 import com.dev.aerolinea.exception.VueloNotFoundException;
 import com.dev.aerolinea.model.Vuelo;
 import com.dev.aerolinea.repository.VueloRepository;
 
+@Service
 public class VueloService {
 
     
@@ -27,15 +30,15 @@ public class VueloService {
     }
 
     public void eliminarVuelo(Long id) {
-        if(vueloRepository.findById(id).isEmpty()){
-            throw new VueloNotFoundException("No se encontro el vuelo con id: " + id);
-        }   
+        Vuelo vuelo = vueloRepository.findById(id);
+        if(vuelo == null) throw new VueloNotFoundException("No se encontro el vuelo con id: " + id);  
         vueloRepository.deleteById(id);
     }
 
-    public Vuelo getVueloById(Long id) {
-        return vueloRepository.findById(id)
-                .orElseThrow(() -> new VueloNotFoundException("No se encontro el vuelo con id: " + id));
+    public Vuelo getVueloById(Long id) {  
+        Vuelo vuelo = vueloRepository.findById(id);
+        if(vuelo == null) throw new VueloNotFoundException("No se encontro el vuelo con id: " + id);
+        return vuelo;
     }
 
     public void reducirAsientosDisponibles(Long id){

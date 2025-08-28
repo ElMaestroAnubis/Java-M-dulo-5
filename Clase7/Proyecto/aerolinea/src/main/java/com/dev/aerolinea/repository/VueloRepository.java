@@ -6,8 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Repository;
+
 import com.dev.aerolinea.model.Vuelo;
 
+@Repository
 public class VueloRepository {
 
     private final Map<Long, Vuelo> vuelos = new HashMap<>();
@@ -18,7 +21,6 @@ public class VueloRepository {
 
   
     public Vuelo findById(Long id) {
-         //TODO: Elaborar una logica mas compleja para encontrar un vuelo por id pensando en las excepciones
          return vuelos.get(id);
     }
 
